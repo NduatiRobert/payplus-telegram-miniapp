@@ -1,0 +1,6 @@
+{
+  "name": "PayPlus Telegram Mini App",
+  "description": "Telegram Mini App interface for watching ads, completing tasks, inviting friends, and withdrawing earnings with PayPlus$.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

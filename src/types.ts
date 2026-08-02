@@ -102,5 +102,6 @@ declare global {
       };
     };
     monetag?: any;
+    show_11483734?: () => Promise<void>;
   }
 }

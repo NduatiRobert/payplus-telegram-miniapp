@@ -20,6 +20,24 @@ export const VideoAdModal: React.FC<VideoAdModalProps> = ({
   const [claimed, setClaimed] = useState(false);
 
   useEffect(() => {
+    // Check if Monetag Rewarded Interstitial script function is available
+    if (typeof (window as any).show_11483734 === 'function') {
+      (window as any).show_11483734().then(() => {
+        setIsCompleted(true);
+        setTimeLeft(0);
+        sound.playAdReward();
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.6 },
+        });
+      }).catch((err: any) => {
+        console.warn('Monetag ad dismissed or failed:', err);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     if (timeLeft <= 0) {
       setIsCompleted(true);
       sound.playAdReward();
